@@ -3,11 +3,11 @@
   "version": "1.11.0",
   "private": true,
   "scripts": {
-    "start": "node lib/index.js",
-    "start:watch": "nodemon lib/index.js",
-    "build": "tsc && cp -r src/public lib/",
-    "build:watch": "tsc --watch",
-    "dev": "nodemon src/index.ts",
+    "start": "node init && node lib/index.js",
+    "start:watch": "node init && nodemon lib/index.js",
+    "build": "node init && tsc && cp -r src/public lib/",
+    "build:watch": "node init && tsc --watch",
+    "dev": "node init && nodemon src/index.ts",
     "migrate": "node ./lib/migrations.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
